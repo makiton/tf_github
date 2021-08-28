@@ -11,3 +11,17 @@ resource "github_repository" "tf_github" {
 
   vulnerability_alerts = true
 }
+
+resource "github_repository" "paiza" {
+  name        = "paiza"
+  description = "my answers for paiza problems"
+
+  allow_squash_merge     = false
+  allow_rebase_merge     = false
+  delete_branch_on_merge = true
+
+  auto_init          = true
+  gitignore_template = "Python"
+
+  vulnerability_alerts = true
+}
