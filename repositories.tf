@@ -25,3 +25,17 @@ resource "github_repository" "paiza" {
 
   vulnerability_alerts = true
 }
+
+resource "github_repository" "atcoder" {
+  name        = "atcoder"
+  description = "my answers for atcoder problems"
+
+  allow_squash_merge     = false
+  allow_rebase_merge     = false
+  delete_branch_on_merge = true
+
+  auto_init          = true
+  gitignore_template = "Python"
+
+  vulnerability_alerts = true
+}
