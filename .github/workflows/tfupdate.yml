@@ -25,6 +25,7 @@ jobs:
           resource: "terraform"
           file_path: "github.tf"
           base_branch: main
+          reviewer: makiton
 
       - name: Update terraform provider
         uses: HENNGE/tfupdate-action@v1.0.2
@@ -33,3 +34,4 @@ jobs:
           provider_name: "github"
           file_path: "github.tf"
           base_branch: main
+          reviewer: makiton
