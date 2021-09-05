@@ -30,13 +30,13 @@ jobs:
           git config --local user.name ${{ secrets.GITHUB_USERNAME }}
 
       - name: Update terraform
-        uses: HENNGE/tfupdate-action@v1
+        uses: HENNGE/tfupdate-action@v1.0.2
         with:
           resource: "terraform"
           file_path: "github.tf"
 
       - name: Update terraform provider
-        uses: HENNGE/tfupdate-action@v1
+        uses: HENNGE/tfupdate-action@v1.0.2
         with:
           resource: "provider"
           provider_name: "github"
