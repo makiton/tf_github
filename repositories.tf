@@ -39,3 +39,16 @@ resource "github_repository" "atcoder" {
 
   vulnerability_alerts = true
 }
+
+resource "github_repository" "setup" {
+  name        = "setup"
+  description = "setup scripts for my PCs"
+
+  allow_squash_merge     = false
+  allow_rebase_merge     = false
+  delete_branch_on_merge = true
+
+  auto_init          = true
+
+  vulnerability_alerts = true
+}
