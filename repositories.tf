@@ -48,7 +48,31 @@ resource "github_repository" "setup" {
   allow_rebase_merge     = false
   delete_branch_on_merge = true
 
+  auto_init = true
+
+  vulnerability_alerts = true
+}
+
+locals {
+  repositories = {
+    "template-nextjs" : {
+      "description" : "my next.js template"
+      "gitignore_template" : "Node"
+    }
+  }
+}
+
+resource "github_repository" "repositories" {
+  for_each    = local.repositories
+  name        = each.key
+  description = each.value.description
+
+  allow_squash_merge     = false
+  allow_rebase_merge     = false
+  delete_branch_on_merge = true
+
   auto_init          = true
+  gitignore_template = each.value.gitignore_template
 
   vulnerability_alerts = true
 }
