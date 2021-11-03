@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
 env:
   GITHUB_TOKEN: ${{ github.token }}
+  USER_NAME: makiton
+  USER_EMAIL: makiton@gmail.com
 
 jobs:
   tfupdate:
