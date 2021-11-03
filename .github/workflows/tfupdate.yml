@@ -32,6 +32,7 @@ jobs:
         with:
           resource: "provider"
           provider_name: "github"
+          provider_repo: "integrations/terraform-provider-github"
           file_path: "github.tf"
           base_branch: main
           reviewer: makiton
