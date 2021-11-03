@@ -58,7 +58,7 @@ locals {
     "template-nextjs" : {
       "description" : "my next.js template"
       "gitignore_template" : "Node"
-      "is_template": true
+      "is_template" : true
     }
   }
 }
