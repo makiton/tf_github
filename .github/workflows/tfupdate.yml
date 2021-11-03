@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Update terraform
-        uses: HENNGE/tfupdate-action@v1.0.2
+        uses: HENNGE/tfupdate-action@master
         with:
           resource: "terraform"
           file_path: "github.tf"
@@ -30,7 +30,7 @@ jobs:
           reviewer: makiton
 
       - name: Update terraform provider
-        uses: HENNGE/tfupdate-action@v1.0.2
+        uses: HENNGE/tfupdate-action@master
         with:
           resource: "provider"
           provider_name: "github"
