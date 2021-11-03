@@ -58,6 +58,7 @@ locals {
     "template-nextjs" : {
       "description" : "my next.js template"
       "gitignore_template" : "Node"
+      "is_template": true
     }
   }
 }
@@ -66,6 +67,8 @@ resource "github_repository" "repositories" {
   for_each    = local.repositories
   name        = each.key
   description = each.value.description
+
+  is_template = each.value.is_template || false
 
   allow_squash_merge     = false
   allow_rebase_merge     = false
