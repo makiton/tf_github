@@ -16,6 +16,8 @@ resource "github_repository" "paiza" {
   name        = "paiza"
   description = "my answers for paiza problems"
 
+  visibility = "private"
+
   allow_squash_merge     = false
   allow_rebase_merge     = false
   delete_branch_on_merge = true
@@ -59,6 +61,7 @@ locals {
       "description" : "my next.js template"
       "gitignore_template" : "Node"
       "is_template" : true
+      "homepage_url" : "template-nextjs-seven.vercel.app"
     }
   }
 }
@@ -69,6 +72,8 @@ resource "github_repository" "repositories" {
   description = each.value.description
 
   is_template = each.value.is_template || false
+
+  homepage_url = each.value.homepage_url
 
   allow_squash_merge     = false
   allow_rebase_merge     = false
