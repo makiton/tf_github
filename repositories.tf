@@ -63,6 +63,9 @@ locals {
       "is_template" : true
       "homepage_url" : "template-nextjs-seven.vercel.app"
     }
+    "renovate-config" : {
+      "description" : "my preset renovate config"
+    }
   }
 }
 
@@ -71,16 +74,16 @@ resource "github_repository" "repositories" {
   name        = each.key
   description = each.value.description
 
-  is_template = each.value.is_template || false
+  is_template = lookup(each.value, "is_template", false)
 
-  homepage_url = each.value.homepage_url
+  homepage_url = lookup(each.value, "homepage_url", "")
 
   allow_squash_merge     = false
   allow_rebase_merge     = false
   delete_branch_on_merge = true
 
   auto_init          = true
-  gitignore_template = each.value.gitignore_template
+  gitignore_template = lookup(each.value, "gitignore_template", "")
 
   vulnerability_alerts = true
 }
