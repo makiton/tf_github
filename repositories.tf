@@ -1,35 +1,35 @@
 locals {
   repositories = {
-    "template-nextjs" : {
-      "description" : "my next.js template"
-      "gitignore_template" : "Node"
-      "is_template" : true
-      "homepage_url" : "template-nextjs-seven.vercel.app"
+    template-nextjs = {
+      description        = "my next.js template"
+      gitignore_template = "Node"
+      is_template        = true
+      homepage_url       = "template-nextjs-seven.vercel.app"
     }
-    "renovate-config" : {
-      "description" : "my preset renovate config"
+    renovate-config = {
+      description = "my preset renovate config"
     }
-    "template-rails" : {
-      "description" : "my Rails template"
-      "gitignore_template" : "Ruby"
-      "is_template" : true
+    template-rails = {
+      description        = "my Rails template"
+      gitignore_template = "Ruby"
+      is_template        = true
     }
-    "tf_github" : {
-      "description" : "my github repositories"
-      "gitignore_template" : "Terraform"
+    tf_github = {
+      description        = "my github repositories"
+      gitignore_template = "Terraform"
 
     }
-    "paiza" : {
-      "description" : "my answers for paiza problems"
-      "gitignore_template" : "Python"
-      "private" : true
+    paiza = {
+      description        = "my answers for paiza problems"
+      gitignore_template = "Python"
+      private            = true
     }
-    "atcoder" : {
-      "description" : "my answers for atcoder problems"
-      "gitignore_template" : "Python"
+    atcoder = {
+      description        = "my answers for atcoder problems"
+      gitignore_template = "Python"
     }
-    "setup" : {
-      "description" : "setup scripts for my PCs"
+    setup = {
+      description = "setup scripts for my PCs"
     }
   }
 }
