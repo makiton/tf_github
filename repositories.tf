@@ -13,6 +13,7 @@ locals {
       description        = "my Rails template"
       gitignore_template = "Ruby"
       is_template        = true
+      status_checks      = ["test"]
     }
     tf_github = {
       description        = "my github repositories"
@@ -35,16 +36,18 @@ locals {
 }
 
 module "repository" {
-  source="./modules/repository"
+  source = "./modules/repository"
 
   for_each = local.repositories
 
   repository_name = each.key
-  description = each.value.description
+  description     = each.value.description
 
-  private = lookup(each.value, "private", false)
+  private     = lookup(each.value, "private", false)
   is_template = lookup(each.value, "is_template", false)
 
-  homepage_url = lookup(each.value, "homepage_url", null)
+  homepage_url       = lookup(each.value, "homepage_url", null)
   gitignore_template = lookup(each.value, "gitignore_template", "")
+
+  status_checks = lookup(each.value, "status_checks", [])
 }

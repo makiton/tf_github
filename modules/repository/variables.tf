@@ -20,3 +20,8 @@ variable "is_template" {
   type    = bool
   default = false
 }
+
+variable "status_checks" {
+  type = list(string)
+  default = []
+}
