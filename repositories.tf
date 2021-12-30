@@ -66,6 +66,11 @@ locals {
     "renovate-config" : {
       "description" : "my preset renovate config"
     }
+    "template-rails" : {
+      "description" : "my Rails template"
+      "gitignore_template" : "Ruby"
+      "is_template" : true
+    }
   }
 }
 
