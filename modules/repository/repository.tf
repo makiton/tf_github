@@ -12,6 +12,8 @@ resource "github_repository" "repository" {
   allow_rebase_merge     = false
   delete_branch_on_merge = true
 
+  has_issues = true
+
   auto_init          = true
   gitignore_template = var.gitignore_template
 
