@@ -34,23 +34,17 @@ locals {
   }
 }
 
-resource "github_repository" "repositories" {
-  for_each    = local.repositories
-  name        = each.key
+module "repository" {
+  source="./modules/repository"
+
+  for_each = local.repositories
+
+  repository_name = each.key
   description = each.value.description
 
-  visibility = lookup(each.value, "private", false) ? "private" : "public"
-
+  private = lookup(each.value, "private", false)
   is_template = lookup(each.value, "is_template", false)
 
-  homepage_url = lookup(each.value, "homepage_url", "")
-
-  allow_squash_merge     = false
-  allow_rebase_merge     = false
-  delete_branch_on_merge = true
-
-  auto_init          = true
+  homepage_url = lookup(each.value, "homepage_url", null)
   gitignore_template = lookup(each.value, "gitignore_template", "")
-
-  vulnerability_alerts = true
 }
