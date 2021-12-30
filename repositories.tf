@@ -13,7 +13,7 @@ locals {
       description        = "my Rails template"
       gitignore_template = "Ruby"
       is_template        = true
-      status_checks      = ["test"]
+      status_checks      = ["test (2.7)", "test (3.0)"]
     }
     tf_github = {
       description        = "my github repositories"
