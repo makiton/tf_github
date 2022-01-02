@@ -32,6 +32,9 @@ locals {
     setup = {
       description = "setup scripts for my PCs"
     }
+    makiton = {
+      description = "github profile page"
+    }
   }
 }
 
