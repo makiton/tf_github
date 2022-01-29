@@ -19,7 +19,7 @@ locals {
     tf_github = {
       description        = "my github repositories"
       gitignore_template = "Terraform"
-
+      status_checks      = ["Terraform Cloud/makiton/tf_github"]
     }
     paiza = {
       description        = "my answers for paiza problems"
