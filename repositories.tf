@@ -5,6 +5,7 @@ locals {
       gitignore_template = "Node"
       is_template        = true
       homepage_url       = "template-nextjs-seven.vercel.app"
+      status_checks      = ["Vercel", "Check format, lint, build, and test"]
     }
     renovate-config = {
       description = "my preset renovate config"
