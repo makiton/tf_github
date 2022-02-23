@@ -22,6 +22,11 @@ variable "is_template" {
 }
 
 variable "status_checks" {
-  type = list(string)
+  type    = list(string)
   default = []
+}
+
+variable "protected_branches" {
+  type    = map(object({}))
+  default = { main = {} }
 }
