@@ -53,5 +53,8 @@ module "repository" {
   homepage_url       = lookup(each.value, "homepage_url", null)
   gitignore_template = lookup(each.value, "gitignore_template", "")
 
+  # protecting branches for private repos is premium feature in github
+  protected_branches = lookup(each.value, "private", false) ? {} : { main = {} }
+
   status_checks = lookup(each.value, "status_checks", [])
 }

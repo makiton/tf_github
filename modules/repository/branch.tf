@@ -3,10 +3,11 @@ resource "github_branch_default" "default" {
   branch     = "main"
 }
 
-resource "github_branch_protection" "main" {
+resource "github_branch_protection" "protected_branches" {
   repository_id = github_repository.repository.node_id
 
-  pattern = "main"
+  for_each = var.protected_branches
+  pattern  = each.key
 
   required_status_checks {
     strict   = true
