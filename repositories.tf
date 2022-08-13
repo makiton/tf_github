@@ -36,6 +36,10 @@ locals {
     makiton = {
       description = "github profile page"
     }
+    "slack-arigato-usagi" = {
+      description = ""
+      archived    = true
+    }
   }
 }
 
