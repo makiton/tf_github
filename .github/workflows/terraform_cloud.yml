@@ -23,8 +23,9 @@ jobs:
       - name: Terraform plan
         id: plan
         env:
-          TF_VAR_token: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_APP_ID: ${{ secrets.TF_GITHUB_APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets.TF_GITHUB_APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.TF_GITHUB_APP_PEM_FILE }}
         run: terraform plan -no-color
         continue-on-error: true
       
@@ -32,8 +33,9 @@ jobs:
         id: apply
         if: github.branch == 'main'
         env:
-          TF_VAR_token: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_APP_ID: ${{ secrets.TF_GITHUB_APP_ID }}
+          GITHUB_APP_INSTALLATION_ID: ${{ secrets.TF_GITHUB_APP_INSTALLATION_ID }}
+          GITHUB_APP_PEM_FILE: ${{ secrets.TF_GITHUB_APP_PEM_FILE }}
         run: terraform apply -no-color -auto-approve
 
       - name: Output results as a comment to PR
