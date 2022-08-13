@@ -36,6 +36,10 @@ locals {
     makiton = {
       description = "github profile page"
     }
+    "slack-arigato-usagi" = {
+      description = ""
+      archived    = true
+    }
   }
 }
 
@@ -57,4 +61,6 @@ module "repository" {
   protected_branches = lookup(each.value, "private", false) ? {} : { main = {} }
 
   status_checks = lookup(each.value, "status_checks", [])
+
+  archived = lookup(each.value, "archived", false)
 }
