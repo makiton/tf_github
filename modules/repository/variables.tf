@@ -30,3 +30,8 @@ variable "protected_branches" {
   type    = map(object({}))
   default = { main = {} }
 }
+
+variable "archived" {
+  type    = bool
+  default = false
+}

@@ -18,4 +18,6 @@ resource "github_repository" "repository" {
   gitignore_template = var.gitignore_template
 
   vulnerability_alerts = true
+
+  archived = var.archived
 }
